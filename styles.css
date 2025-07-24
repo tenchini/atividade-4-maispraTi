@@ -1,0 +1,553 @@
+/* =================================== */
+/* RESET E CONFIGURAÇÕES GLOBAIS      */
+/* =================================== */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');
+
+:root {
+    --cor-fundo: #171627;
+    --cor-card: #1f1d35;
+    --cor-texto-principal: #f1f1f3;
+    --cor-texto-secundario: #bbbac4;
+    --cor-destaque: #6d5fed;
+    --cor-contato: #0f0e1b;
+    --borda-gradiente: linear-gradient(90deg, #6d5fed, #4e43cb);
+    --fonte-principal: 'Quicksand', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cor-fundo) url('assets/fundo_dark.svg');
+    background-attachment: fixed;
+
+    font-family: var(--fonte-principal);
+    color: var(--cor-texto-principal);
+    line-height: 1.7;
+    transition: background 0.5s ease;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    background-color: var(--cor-card);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    border-radius: 16px;
+    border: 1px solid #2a293d;
+}
+
+/* =================================== */
+/* CORREÇÃO PARA LINKS ÂNCORA         */
+/* =================================== */
+section[id] {
+    scroll-margin-top: 250px;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    color: var(--cor-texto-principal);
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    color: var(--cor-texto-secundario);
+}
+
+/* =================================== */
+/* HEADER E NAVEGAÇÃO                 */
+/* =================================== */
+header.main-header {
+    background-attachment: fixed;
+    background-image: url('assets/fundo_dark.svg');
+    width: 100%;
+    padding: 1rem 0;
+    background-color: rgba(23, 22, 39, 0.8);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--cor-texto-principal);
+    text-decoration: none;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+}
+nav a {
+    color: var(--cor-texto-secundario);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+nav a:hover {
+    color: var(--cor-destaque);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--cor-destaque);
+    outline-offset: 2px;
+}
+/* =================================== */
+/* SEÇÃO DE APRESENTAÇÃO (HERO)       */
+/* =================================== */
+.hero-section {
+    background: none;
+    border: none;
+    padding: 6rem 0;
+}
+.hero-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.hero-text h1 {
+    margin-bottom: 0.5rem;
+}
+.hero-text .subtitle {
+    font-size: 1.5rem;
+    color: var(--cor-destaque);
+    margin: 0.5rem 0 1rem 0;
+}
+.hero-text .description {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+.cta-button {
+    display: inline-block;
+    background-image: var(--borda-gradiente);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(109, 95, 237, 0.2);
+}
+.hero-image {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    border-radius: 50%;
+}
+.hero-socials {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-right: 2rem;
+}
+.hero-socials a {
+    color: var(--cor-texto-secundario);
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+}
+.hero-socials a:hover {
+    color: var(--cor-destaque);
+    transform: scale(1.2);
+}
+
+/* =================================== */
+/* HABILIDADES, PROJETOS E CONTATO     */
+/* =================================== */
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+}
+.skills-list li {
+    background-color: rgba(109, 95, 237, 0.1);
+    color: var(--cor-destaque);
+    padding: 8px 16px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.skills-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(109, 95, 237, 0.2);
+}
+.project-card {
+    border-top: 1px solid #2a293d;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+}
+.project-card:first-of-type {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+}
+.project-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--cor-destaque);
+    font-weight: bold;
+}
+.texto-main {
+    text-align: center;
+    margin-bottom: 30px;
+}
+#texto-dif {
+    text-align: center;
+}
+#sobre {
+    margin-top: 0px;
+}
+#contato {
+    background-color: var(--cor-contato);
+    border-radius: 20px;
+    padding: 4rem;
+    border: none;
+}
+.contact-content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+.contact-details {
+    flex-basis: 55%;
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+.contact-item .icon {
+    font-size: 1.5rem;
+    color: var(--cor-destaque);
+}
+.contact-item h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--cor-texto-principal);
+}
+.contact-item p {
+    color: var(--cor-texto-secundario);
+}
+.contact-button {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #0d0d0d;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+.contact-button:hover {
+    background-color: var(--cor-destaque);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(109, 95, 237, 0.2);
+}
+.contact-illustration {
+    flex-basis: 40%;
+}
+.contact-illustration img {
+    width: 100%;
+    max-width: 350px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* =================================== */
+/* EFEITO GLITCH E TROCA DE FOTO      */
+/* =================================== */
+.hero-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.hero-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 8px solid var(--cor-destaque);
+}
+.hero-image .img-normal {
+    opacity: 1;
+    z-index: 2;
+    transition: opacity 0.5s ease-in-out;
+    transition-delay: 0.2s;
+}
+.hero-image .img-hover {
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+.hero-image .glitch-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: 3;
+    opacity: 0;
+}
+.hero-image:hover .glitch-overlay {
+    opacity: 1;
+    animation: glitch-fx 0.3s steps(2, end) forwards;
+}
+.hero-image:hover .img-normal {
+    opacity: 0;
+    transition-delay: 0s;
+}
+.hero-image:hover .img-hover {
+    opacity: 1;
+    transition-delay: 0.2s;
+}
+.glitch-overlay::before,
+.glitch-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/perfil_linkedin.jpeg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+.glitch-overlay::before {
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    transform: translate(-10px, -5px);
+    filter: drop-shadow(0 0 1px red);
+}
+.glitch-overlay::after {
+    clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+    transform: translate(10px, 5px);
+    filter: drop-shadow(0 0 1px blue);
+}
+@keyframes glitch-fx {
+    0% {
+        transform: translate(0);
+        opacity: 1;
+    }
+    25% {
+        transform: translate(5px, 5px);
+    }
+    50% {
+        transform: translate(-5px, -5px);
+    }
+    75% {
+        transform: translate(5px, -5px);
+    }
+    100% {
+        transform: translate(0);
+        opacity: 0;
+    }
+}
+
+/* =================================== */
+/* FOOTER E RESPONSIVIDADE GERAL      */
+/* =================================== */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--cor-texto-secundario);
+}
+.hamburger-menu {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8em;
+    cursor: pointer;
+    display: none;
+    z-index: 1001;
+}
+@media (max-width: 900px) {
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .hero-socials {
+        order: 3;
+        flex-direction: row;
+        padding-right: 0;
+        margin-top: 2rem;
+    }
+    .contact-content-wrapper {
+        flex-direction: column;
+    }
+    .contact-details {
+        text-align: center;
+    }
+    .contact-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+    }
+}
+
+/* =================================== */
+/* ESTILOS DO MENU HAMBURGER          */
+/* =================================== */
+@media (max-width: 768px) {
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-image: url('assets/fundo_dark.svg');
+        background-color: #171627ce;
+        border-top: 1px solid #2a293d;
+    }
+    nav.nav-open {
+        display: flex;
+    }
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 1rem 0;
+        gap: 0;
+    }
+    nav ul li {
+        margin: 0;
+        text-align: center;
+        width: 100%;
+    }
+    nav ul li a {
+        padding: 1rem;
+        display: block;
+        width: 100%;
+    }
+    .hamburger-menu {
+        display: block;
+    }
+}
+
+/* =================================== */
+/* THEME SWITCHER NO NAV             */
+/* =================================== */
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+#theme-switcher {
+    background: none;
+    border: none;
+    color: var(--cor-texto-secundario);
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 5px;
+}
+
+#theme-switcher:hover {
+    color: var(--cor-destaque);
+    transform: scale(1.15);
+}
+
+@media (max-width: 768px) {
+    nav ul li {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* =================================== */
+/* DEFINIÇÕES DO TEMA CLARO          */
+/* =================================== */
+body.light-theme {
+    --cor-fundo: #f4f4f5;
+    --cor-card: #ffffff;
+    --cor-texto-principal: #1f1d35;
+    --cor-texto-secundario: #52525b;
+    --cor-contato: #e4e4e7;
+
+    background: var(--cor-fundo) url('assets/fundo_light.svg');
+    background-attachment: fixed;
+}
+
+body.light-theme header.main-header {
+    background-color: rgba(244, 244, 245, 0.8);
+    background-image: url('assets/fundo_light.svg');
+}
+
+body.light-theme nav {
+    background-color: #f4f4f5ce;
+    background-image: url('assets/fundo_light.svg');
+}
+
+body.light-theme .hamburger-menu {
+    color: var(--cor-texto-principal);
+}
+
+body.light-theme .contact-button {
+    background-color: var(--cor-destaque);
+    color: white;
+}
