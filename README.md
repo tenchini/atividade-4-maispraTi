@@ -4,7 +4,7 @@ Este é um projeto de portfólio pessoal desenvolvido para demonstrar competênc
 
 ### 🔗 [Veja o projeto ao vivo aqui!](https://tenchini.github.io/atividade-4-maispraTi/)
 
-![Screenshot do Portfólio](https://imgur.com/a/CX5AK9Z)
+![Screenshot do Portfólio](https://i.imgur.com/ydl62XU.png)
 
 ---
 
