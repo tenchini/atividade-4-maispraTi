@@ -4,8 +4,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainNav = document.getElementById('main-nav')
 
     if (hamburgerBtn && mainNav) {
+        const icon = hamburgerBtn.querySelector('i')
+
         hamburgerBtn.addEventListener('click', () => {
             mainNav.classList.toggle('nav-open')
+
+            if (mainNav.classList.contains('nav-open')) {
+                icon.className = 'fa-solid fa-xmark'
+            } else {
+                icon.className = 'fa-solid fa-bars'
+            }
         })
     }
 
