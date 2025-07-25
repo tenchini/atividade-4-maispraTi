@@ -34,7 +34,7 @@ Este projeto foi desenvolvido para atender aos seguintes critérios:
 
 ### 1. Estrutura de Arquivos
 
--   [x] `perfil.html` na raiz do projeto.
+-   [x] `index.html` na raiz do projeto.
 -   [x] `styles.css` para a estilização.
 -   [x] Pasta `assets` para imagens e outros recursos.
 
