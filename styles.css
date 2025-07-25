@@ -108,6 +108,12 @@ header.main-header {
     color: var(--cor-texto-principal);
     text-decoration: none;
 }
+
+.logo:hover {
+    color: var(--cor-destaque);
+    transform: scale(1.05);
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -117,10 +123,13 @@ nav a {
     color: var(--cor-texto-secundario);
     font-weight: 500;
     text-decoration: none;
+    display: inline-block;
     transition: color 0.3s ease;
 }
 nav a:hover {
     color: var(--cor-destaque);
+    transform: scale(1.05);
+    text-decoration: underline;
 }
 
 a:focus-visible,
@@ -168,10 +177,13 @@ button:focus-visible {
     text-decoration: none;
     transition: all 0.3s ease;
 }
+
 .cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(109, 95, 237, 0.2);
+    transition: 0.5s ease;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(216, 216, 216, 0.26);
 }
+
 .hero-image {
     width: 250px;
     height: 250px;
@@ -223,6 +235,7 @@ button:focus-visible {
 .skills-list li:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(109, 95, 237, 0.2);
+    cursor: default;
 }
 .project-card {
     border-top: 1px solid #2a293d;
@@ -298,9 +311,10 @@ button:focus-visible {
 .contact-button:hover {
     background-color: var(--cor-destaque);
     color: white;
-    transform: translateY(-3px);
+    transform: translatex(5px);
     box-shadow: 0 10px 20px rgba(109, 95, 237, 0.2);
 }
+
 .contact-illustration {
     flex-basis: 40%;
 }
@@ -458,7 +472,7 @@ footer {
         left: 0;
         width: 100%;
         background-image: url('assets/fundo_dark.svg');
-        background-color: #171627ce;
+        background-color: #171627f3;
         border-top: 1px solid #2a293d;
     }
     nav.nav-open {
@@ -534,7 +548,7 @@ body.light-theme {
 }
 
 body.light-theme header.main-header {
-    background-color: rgba(244, 244, 245, 0.8);
+    background-color: #f4f4f5cc;
     background-image: url('assets/fundo_light.svg');
 }
 
@@ -550,4 +564,57 @@ body.light-theme .hamburger-menu {
 body.light-theme .contact-button {
     background-color: var(--cor-destaque);
     color: white;
+}
+
+body.light-theme .contact-button:hover {
+    background-color: var(--cor-texto-principal);
+    color: var(--cor-contato);
+}
+
+body.light-theme .cta-button:hover {
+    background-image: none;
+    background-color: var(--cor-texto-principal);
+    color: var(--cor-contato);
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgb(109, 95, 237);
+}
+
+/* =================================== */
+/* BOTÃO PARA VOLTAR AO TOPO           */
+/* =================================== */
+
+.botao-topo {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+
+    background-color: #6d5fed;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-decoration: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
+}
+
+.botao-topo.visivel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.botao-topo:hover {
+    background-color: #4e43cb;
+    transform: scale(1.1);
 }
